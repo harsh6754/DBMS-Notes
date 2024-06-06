@@ -1,0 +1,286 @@
+                                         DBMS(Database management System)
+
+1) Data:- 
+Data is a collection of raw bytes is called data.
+Data is meaning-less.
+Data are store in memory in the form of binary.
+Data is raw-facts and collection of bytes.
+Data is use for making the decision.
+
+                                     
+                                 ---------------------
+                                |                     |
+                                |         Data        |
+                                |                     |
+                                 ---------------------
+                                           |
+                                           |(Process/Interpret)
+                                           |
+                                 ---------------------
+                                |                     |
+                                |       Meaning       |
+                                |                     |
+                                 ---------------------
+                                           |
+                                           |
+                                           |
+                                 ---------------------
+                                |                     |
+                                |     Information     |
+                                |                     |
+                                 ---------------------
+
+1. What is Data?
+
+a. Data is a collection of raw, unorganized facts and details like text, observations, figures, symbols,
+and descriptions of things etc.
+
+In other words, data does not carry any specific purpose and has no significance by itself.
+Moreover, data is measured in terms of bits and bytes – which are basic units of information in the
+context of computer storage and processing.
+
+b. Data can be recorded and doesn’t have any meaning unless processed.
+
+2. Types of Data:-
+
+a. Quantitative
+i. Numerical form
+ii. Weight, volume, cost of an item.
+
+b. Qualitative
+i. Descriptive, but not numerical.
+ii. Name, gender, hair color of a person.
+
+3. What is Information?
+
+a. Info. Is processed, organized, and structured data.
+b. It provides context of the data and enables decision making.
+c. Processed data that make sense to us.
+d. Information is extracted from the data, by analyzing and interpreting pieces of data.
+e. E.g. you have data of all the people living in your locality, its Data, when you analyze and interpret
+the data and come to some conclusion that:
+i. There are 100 senior citizens.
+ii. The sex ratio is 1.1.
+iii. Newborn babies are 100.
+These are information.
+
+4. Data vs Information
+a. Data is a collection of facts, while information puts those facts into context.
+b. While data is raw and unorganized, information is organized.
+c. Data points are individual and sometimes unrelated. Information maps out that data to provide a big-picture view of how it all fits together.
+d. Data, on its own, is meaningless. When it’s analyzed and interpreted, it becomes meaningful information.
+e. Data does not depend on information; however, information depends on data.
+f. Data typically comes in the form of graphs, numbers, figures, or statistics. Information is typically
+presented through words, language, thoughts, and ideas.
+g. Data isn’t sufficient for decision-making, but you can make decisions based on information.
+
+
+5. What is Database?
+
+a. Database is an electronic place/system where data is stored in a way that it can be easily accessed,
+managed, and updated.
+b. To make real use Data, we need Database management systems. (DBMS)
+
+6. What is DBMS?
+ 
+a. A database-management system (DBMS) is a collection of interrelated data and a set of
+programs to access those data. The collection of data, usually referred to as the database,
+contains information relevant to an enterprise. The primary goal of a DBMS is to provide a way to
+store and retrieve database information that is both convenient and efficient.
+
+b. A DBMS is the database itself, along with all the software and functionality. It is used to perform
+different operations, like addition, access, updating, and deletion of the data.
+
+
+                                                                                 
+ ----------------               -------------------                  ------------------
+|                |             |                   |    API         |     APP          |
+|    database    |-----------> |       DBMS        |--------------->|     USER         | 
+|                |             |                   |                |     APP          |
+ ---------------                -------------------                  ------------------
+
+8. DBMS vs File Systems?
+
+a. File-processing systems has major disadvantages.
+i. Data Redundancy and inconsistency
+ii. Difficulty in accessing data
+iii. Data isolation
+iv. Integrity problems
+v. Atomicity problems
+vi. Concurrent-access anomalies
+vii. Security problems
+
+b. Above 7 are also the Advantages of DBMS
+
+9. Why to use DBMS?
+Database management systems (DBMS) are essential tools for modern organizations to manage and process data. They offer several advantages over traditional file-based systems, 
+
+including:
+Data integrity: DBMS ensures data integrity, security, and consistency.
+Data redundancy: DBMS reduces data redundancy, which can cause anomalies in a database and make it difficult for administrators to maintain.
+Data access: DBMS improves data access, sharing, and integration.
+Data security: DBMS protects information from unauthorized access and modification.
+Data consistency: DBMS ensures that data appears consistently across all databases and is the same for all users.
+Data inconsistency: DBMS eliminates data inconsistency because there is a single repository of data.
+Data recovery: DBMS includes techniques for data recovery.
+Decision-making: DBMS facilitates fast and effective business decision-making.
+Data abstraction: DBMS enables data abstraction, which helps employees understand and work in the software efficiently.
+
+
+ 
+                                   DBMS ARCHITECTURE
+
+
+1. View of Data (Three Schema Architecture)
+
+a. The major purpose of DBMS is to provide users with an abstract view of the data. That is, the system hides certain details of how the data is stored and maintained.
+b. To simplify user interaction with the system, abstraction is applied through several levels of abstraction.
+c. The main objective of three level architecture is to enable multiple users to access the same data with a personalized view while storing the underlying data only once
+
+d. Physical level / Internal level
+i. The lowest level of abstraction describes how the data are stored.
+ii. Low-level data structures used.
+iii. It has Physical schema which describes physical storage structure of DB.
+iv. Talks about: Storage allocation (N-ary tree etc), Data compression & encryption etc.
+v. Goal: We must define algorithms that allow efficient access to data.
+
+e. Logical level / Conceptual level:
+i. The conceptual schema describes the design of a database at the conceptual level,
+describes what data are stored in DB, and what relationships exist among those data.
+ii. User at logical level does not need to be aware about physical-level structures.
+iii. DBA, who must decide what information to keep in the DB use the logical level of
+abstraction.
+iv. Goal: ease to use.
+
+f. View level / External level:
+i. Highest level of abstraction aims to simplify users’ interaction with the system by
+providing different view to different end-user.
+ii. Each view schema describes the database part that a particular user group is interested
+and hides the remaining database from that user group.
+iii. At the external level, a database contains several schemas that sometimes called as
+subschema. The subschema is used to describe the different view of the database.
+iv. At views also provide a security mechanism to prevent users from accessing certain parts of DB.
+                                                
+
+
+                                        ------------------    ------------------
+                                       |                  |  |                  |
+    External Schema                    |  External Level  |  |  External Level  |
+                                       |                  |  |                  |
+                                        ------------------    ------------------
+                                                   /\           /\
+                                                   ||           ||
+                                                   ||           ||(External/Conceptual Mapping)
+                                                   ||           ||
+                                                   \/           \/
+                                                 ------------------
+                                                |                  |
+    Conceptual Schema                           | Conceptual Level |
+                                                |                  |
+                                                 ------------------ 
+                                                          |
+                                                          |(Conceptual/Internal Mapping)
+                                                          | 
+                                                  -----------------
+                                                 |                 |
+    Internal Schema                              |  Physical Level |
+                                                 |                 |
+                                                  ----------------- 
+                                                          |
+                                                          |
+                                                          | 
+                                                      ---------
+                                                     |         |
+                                                     |         |
+                                                     |   DB    |(Database)
+                                                     |         |
+                                                     |         | 
+                                                      ---------
+
+2. Instances and Schemas
+a. The collection of information stored in the DB at a particular moment is called an instance of DB.
+b. The overall design of the DB is called the DB schema.
+c. Schema is structural description of data. Schema doesn’t change frequently. Data may change frequently.
+d. DB schema corresponds to the variable declarations (along with type) in a program.
+e. We have 3 types of Schemas: Physical, Logical, several view schemas called subschemas.
+f. Logical schema is most important in terms of its effect on application programs, as programmers construct apps by using logical schema.
+g. Physical data independence, physical schema change should not affect logical
+schema/application programs.
+
+3. Data Models:
+a. Provides a way to describe the design of a DB at logical level.
+b. Underlying the structure of the DB is the Data Model; a collection of conceptual tools for describing data, data relationships, data semantics & consistency constraints.
+c. E.g., ER model, Relational Model, object-oriented model, object-relational data model etc.
+
+4. Database Languages:
+a. Data definition language (DDL) to specify the database schema.
+b. Data manipulation language (DML) to express database queries and updates.
+c. Practically, both language features are present in a single DB language, e.g., SQL language.
+
+d. DDL
+. We specify consistency constraints, which must be checked, every time DB is updated.
+
+e. DML
+
+i. Data manipulation involves
+1. Retrieval of information stored in DB.
+2. Insertion of new information into DB.
+3. Deletion of information from the DB.
+4. Updating existing information stored in DB.
+
+ii. Query language, a part of DML to specify statement requesting the retrieval of
+information.
+
+5. How is Database accessed from Application programs?
+
+a. Apps (written in host languages, C/C++, Java) interacts with DB.
+b. E.g., Banking system’s module generating payrolls access DB by executing DML statements from the host language.
+c. API is provided to send DML/DDL statements to DB and retrieve the results.
+
+i. Open Database Connectivity (ODBC), Microsoft “C”.
+ii. Java Database Connectivity (JDBC), Java.
+
+6. Database Administrator (DBA)
+a. A person who has central control of both the data and the programs that access those data.
+b. Functions of DBA
+i. Schema Definition
+ii. Storage structure and access methods.
+iii. Schema and physical organization modifications.
+iv. Authorization control.
+v. Routine maintenance
+1. Periodic backups.
+2. Security patches.
+3. Any upgrades.
+
+7. DBMS Application Architectures: Client machines, on which remote DB users work, and server machines on which DB system runs.
+
+a. T1 Architecture
+i. The client, server & DB all present on the same machine.
+
+b. T2 Architecture
+i. App is partitioned into 2-components.
+ii. Client machine, which invokes DB system functionality at server end through query
+language statements.
+iii. API standards like ODBC & JDBC are used to interact between client and server.
+
+c. T3 Architecture
+i. App is partitioned into 3 logical components.
+ii. Client machine is just a frontend and doesn’t contain any direct DB calls.
+iii. Client machine communicates with App server, and App server communicated with DB
+system to access data.
+iv. Business logic, what action to take at that condition is in App server itself.
+v. T3 architecture are best for WWW Applications.
+
+vi. Advantages:
+1. Scalability due to distributed application servers.
+2. Data integrity, App server acts as a middle layer between client and DB, which
+minimize the chances of data corruption.
+3. Security, client can’t directly access DB, hence it is more secure.
+
+
+
+
+
+
+
+

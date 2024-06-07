@@ -480,3 +480,50 @@ the parent entity set.
 2. Abstraction is applied to treat relationships as higher-level entities. We can call it Abstract entity.
 3. Avoid redundancy
 
+
+Step Follow to create Er-Diagram:-
+ 
+Step1:- Identify Entity Sets
+Step2:- Identify attributes & Types
+step3: Identify Relationship and constraints -> 1) Mapping 2) Participation
+
+
+Example
+
+1) Er-Model of Banking System
+
+Requirement:- Banking system - Branches(PK)
+              Bank - Customer
+              Customer - account, loan
+              Customer - associated with some banker
+              Bank - employees,
+              Account - Saving , Current Account
+              Loan - originated by any Branch
+                     Loan >=1 customer,
+                     Payment-Schedule
+
+Step1:- Identity Set
+        1)Branch
+        2)Customer
+        3)Employee
+        4)Saving Account
+        5)Current-Account
+        6)Loan
+        7)Payment(Weak entity) 
+
+Step2): Attribute
+       1)Branch - name, city, assests,
+       2)Customer- C_id , c_name,C_Address, C_Contact, C_Dob, C_Age, C_Account_type
+       3)Employee - E_ID, E_Name, E_Contact, E_dependent_name, E_year-of-service, E_Start-data,
+       4)Account- Saving account, Current-account,
+       5)Loan- loan number, amount
+       6)Payment-Payment-number, date, amount   
+
+Step3: Relationship Constraint
+
+
+
+2) ER-Model of Facebook Database
+
+    
+                     

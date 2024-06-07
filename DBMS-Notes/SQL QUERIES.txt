@@ -1,0 +1,33 @@
+-- -- -- -- -- BASIC OPERATION AND SYNTAX -- -- -- --
+
+ 
+-- SHOW DATABASES; -- (All Database are showing)
+-- CREATE DATABASE store_db; -- (Create Database)
+-- USE student_details; (Work with Database)
+-- select database(); --(For Check Database)
+-- DROP DATABASE sys; --(Delete Database)
+-- CREATE TABLE CUSTOMER(id INT, name VARCHAR(100)); --(CREATE DATABASE OR Table)
+-- INSERT INTO CUSTOMER VALUE(1,"HARSH");  --(INSERT VALUE INTO TABLE)
+-- DESC customer; --(Describe About Table rows and columns)
+-- INSERT INTO CUSTOMER VALUE (103,"ARPIT"), (105,"Hetashri"); -- (At A Time Multiple data insert) 
+-- SELECT * FROM CUSTOMER;  --(ALL SCHEMA DATA VALUE)
+-- SELECT NAME FROM CUSTOMER;  --(READ ONLY COLUMN VALUE)
+-- SELECT ID,NAME FROM CUSTOMER;  --(READ MULTIPLE COLUMN AT A TIME)
+-- SELECT * FROM CUSTOMER WHERE id=103; --(print data using condition)
+-- ALTER TABLE CUSTOMER ADD CONTACT INT; --(FOR ADD NEW COLUMN)
+-- UPDATE CUSTOMER SET CONTACT=12345 WHERE ID='103'; --(Update Rows Values)
+-- SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM CUSTOMER WHERE ID=103;  --(DELETE DATA FROM DATABASEE)
+-- ALTER TABLE CUSTOMER ADD PRIMARY KEY (id);  --(Use for make any column primary);
+-- CREATE TABLE <TABLE NAME>(COLUMN TYPE NOT NULL) --(Use for not consider Deafult NULL vALUE)
+-- CREATE TABLE STUDENT(ID INT NOT NULL, Name Varchar(100) NOT NULL); --(Use for not consider Deafult NULL vALUE)
+-- ALTER TABLE CUSTOMER ALTER COLUMN name SET DEFAULT 'NULL';  --  --(Use to set by default consider o Value);
+-- ALTER TABLE CUSTOMER MODIFY id INT AUTO_INCREMENT; --(Use to Modify id into auto_increment)
+-- SELECT id AS 'SRNO' FROM CUSTOMER; --(By Using "As" change Column name when execute the query)
+-- SELECT id AS 'SRNO' , name AS "Name" FROM CUSTOMER;  --(USE TO CHANGE MULTIPLE ATTRIBUTE  IN ONE TIME USING "AS")
+-- RENAME TABLE EMPLOYEE TO EMPLOYEES; --(Rename Table Name)
+
+
+
+--   -- -- -- --  String Function -- -- -- -- 
+-- SELECT CONCAT('HARSH','SHAM'); -- (USE TO MERGE TO STRING)

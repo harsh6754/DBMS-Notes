@@ -1,33 +1,112 @@
--- -- -- -- -- BASIC OPERATION AND SYNTAX -- -- -- --
+                                                       MYSQL ALL QUERIES 
 
- 
--- SHOW DATABASES; -- (All Database are showing)
--- CREATE DATABASE store_db; -- (Create Database)
--- USE student_details; (Work with Database)
--- select database(); --(For Check Database)
--- DROP DATABASE sys; --(Delete Database)
--- CREATE TABLE CUSTOMER(id INT, name VARCHAR(100)); --(CREATE DATABASE OR Table)
--- INSERT INTO CUSTOMER VALUE(1,"HARSH");  --(INSERT VALUE INTO TABLE)
--- DESC customer; --(Describe About Table rows and columns)
--- INSERT INTO CUSTOMER VALUE (103,"ARPIT"), (105,"Hetashri"); -- (At A Time Multiple data insert) 
--- SELECT * FROM CUSTOMER;  --(ALL SCHEMA DATA VALUE)
--- SELECT NAME FROM CUSTOMER;  --(READ ONLY COLUMN VALUE)
--- SELECT ID,NAME FROM CUSTOMER;  --(READ MULTIPLE COLUMN AT A TIME)
--- SELECT * FROM CUSTOMER WHERE id=103; --(print data using condition)
--- ALTER TABLE CUSTOMER ADD CONTACT INT; --(FOR ADD NEW COLUMN)
--- UPDATE CUSTOMER SET CONTACT=12345 WHERE ID='103'; --(Update Rows Values)
--- SET SQL_SAFE_UPDATES = 0;
--- DELETE FROM CUSTOMER WHERE ID=103;  --(DELETE DATA FROM DATABASEE)
--- ALTER TABLE CUSTOMER ADD PRIMARY KEY (id);  --(Use for make any column primary);
--- CREATE TABLE <TABLE NAME>(COLUMN TYPE NOT NULL) --(Use for not consider Deafult NULL vALUE)
--- CREATE TABLE STUDENT(ID INT NOT NULL, Name Varchar(100) NOT NULL); --(Use for not consider Deafult NULL vALUE)
--- ALTER TABLE CUSTOMER ALTER COLUMN name SET DEFAULT 'NULL';  --  --(Use to set by default consider o Value);
--- ALTER TABLE CUSTOMER MODIFY id INT AUTO_INCREMENT; --(Use to Modify id into auto_increment)
--- SELECT id AS 'SRNO' FROM CUSTOMER; --(By Using "As" change Column name when execute the query)
--- SELECT id AS 'SRNO' , name AS "Name" FROM CUSTOMER;  --(USE TO CHANGE MULTIPLE ATTRIBUTE  IN ONE TIME USING "AS")
--- RENAME TABLE EMPLOYEE TO EMPLOYEES; --(Rename Table Name)
+1)Listing All Existed Databases:-
+
+SHOW DATABASES;
+
+2)Create Database:-
+
+CREATE DATABASE <DB_NAME>;
+
+3)Shift Database to Current Create Database:-
+
+USE <DB_NAME>;
+
+4)Clear All Cmd:-
+
+system cls;
+
+5)Cmd To Check Which Database you Are Using:- 
+
+SELECT DATABASE();
+
+6)DELETING A DATABASE:-
+
+DROP DATABASE<DB_NAME>;
+
+7)CREATE A COLLECTION IN DATABASES:-
+
+CREATE TABLE <TB_NAME>(<COL1> <DATATYPE>,<COL2> <DATATYPE>);
+
+8)Check Table is Created Or Not:-
+
+SHOW TABLES;
+
+8)DELETING TABLE FROM DATABASE:-
+
+DROP TABLE <TB_NAME>;
+
+9)Cmd for Table Information:-
+
+DESC <TB_NAME>;
+
+10)INSERT VALUE INTO TABLE:-
+
+INSERT INTO <TB_NAME> (<COL1>,<COL2>,<COL3>) VALUES 
+(<VAL1>,<VAL1>,<VA L1>),(<VAL2>,<VAL2>,<VAL2>);
+
+Note:- If U are insert the value in same collection sequence no need to write collection name while insert the data
+
+INSERT INTO <TB_NAME> VALUES (<VAL1>,<VAL2>,<VAL3>);
+
+11)READING DATA FROM TABLES:-
+
+SELECT * FROM <TB_NAME>;
+
+All Data are show
+
+12)READING DATA BASE ON COLLECTION:-
+
+SELECT <COL_NAME> FROM <TB_NAME>;
+
+Show that specific Collection Value;
+
+13)READING DATA BASE ON CONDITION:-
+
+SELECT <COL_NAME> FROM <TB_NAME> WHERE <CONDITION>;
+
+SELECT * FROM <TB_NAME> WHERE <CONDITION>;
+
+Base on the Conditions Display Data
+
+14)Insert New Collection into Existed Table:-
+
+ALTER TABLE <TB_NAME> ADD COLUMN <COL_NAME>  <DATATYPE> AFTER <LOCATION>;
+
+INSERT INTO <TB_NAME> (<Col>) VALUES (<Val>); 
+
+New Collection insert With Value
+
+15) Modify Columns DataType in Existed Table:- 
+            
+ALTER TABLE <TB_NAME> MODIFY COLUMN <COL_NAME>     <COL_NEW_DATATYPE>;
+
+16) Modify/Update data from a Table:-
+
+UPDATE <TB_NAME> SET <COL_NAME>=<VAL>
+WHERE  <Condition>;
+
+17) Delete Value From Table:-
+
+DELETE FROM SQL_P 
+WHERE ID IS NULL AND NAME IS NULL AND CITY IS NULL;
+
+DELETE FROM <TB_NAME> WHERE <CONDITION>;
+  
+18) Default Value Change in Table:-
+
+ALTER TABLE <TB_NAME> MODIFY <COL> <DATATYPES> DEFAULT ‘<As Acc to u’; 
+
+19) Update Multiple Entity Corresponding to single Attribute:-
+
+UPDATE CUSTOMERS
+SET DIVISION = CASE 
+    WHEN ID = 101 THEN '8A11'
+    WHEN ID = 102 THEN '8B12'
+    WHEN ID = 103 THEN '8C13'
+    WHEN ID = 104 THEN '8A6'
+    ELSE DIVISION -- Keeps the value unchanged for other rows
+END
+WHERE ID IN (101, 102, 103, 104);
 
 
-
---   -- -- -- --  String Function -- -- -- -- 
--- SELECT CONCAT('HARSH','SHAM'); -- (USE TO MERGE TO STRING)

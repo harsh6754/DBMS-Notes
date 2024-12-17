@@ -1,140 +1,209 @@
-                                                       MYSQL ALL QUERIES 
+### **1. DATABASE OPERATIONS**
 
-1)Listing All Existed Databases:-
+1. **Listing All Databases**  
+   ```sql
+   SHOW DATABASES;
+   ```
 
-SHOW DATABASES;
+2. **Create Database**  
+   ```sql
+   CREATE DATABASE <DB_NAME>;
+   ```
 
-2)Create Database:-
+3. **Switch to a Database**  
+   ```sql
+   USE <DB_NAME>;
+   ```
 
-CREATE DATABASE <DB_NAME>;
+4. **Check Current Database**  
+   ```sql
+   SELECT DATABASE();
+   ```
 
-3)Shift Database to Current Create Database:-
+5. **Clear Terminal Command**  
+   ```sql
+   system cls;
+   ```
 
-USE <DB_NAME>;
+6. **Delete a Database**  
+   ```sql
+   DROP DATABASE <DB_NAME>;
+   ```
 
-4)Clear All Cmd:-
+---
 
-system cls;
+### **2. TABLE OPERATIONS**
 
-5)Cmd To Check Which Database you Are Using:- 
+7. **Create Table**  
+   ```sql
+   CREATE TABLE <TB_NAME> (
+       <COL1> <DATATYPE>,
+       <COL2> <DATATYPE>
+   );
+   ```
 
-SELECT DATABASE();
+8. **Check Created Tables**  
+   ```sql
+   SHOW TABLES;
+   ```
 
-6)DELETING A DATABASE:-
+9. **Describe Table Structure**  
+   ```sql
+   DESC <TB_NAME>;
+   ```
 
-DROP DATABASE<DB_NAME>;
+10. **Delete a Table**  
+    ```sql
+    DROP TABLE <TB_NAME>;
+    ```
 
-7)CREATE A COLLECTION IN DATABASES:-
+---
 
-CREATE TABLE <TB_NAME>(<COL1> <DATATYPE>,<COL2> <DATATYPE>);
+### **3. INSERTING DATA**
 
-8)Check Table is Created Or Not:-
+11. **Insert Data into Table (Specific Columns)**  
+    ```sql
+    INSERT INTO <TB_NAME> (<COL1>, <COL2>, <COL3>)
+    VALUES (<VAL1>, <VAL2>, <VAL3>), (<VAL4>, <VAL5>, <VAL6>);
+    ```
 
-SHOW TABLES;
+12. **Insert Data (All Columns)**  
+    ```sql
+    INSERT INTO <TB_NAME>
+    VALUES (<VAL1>, <VAL2>, <VAL3>);
+    ```
 
-8)DELETING TABLE FROM DATABASE:-
+---
 
-DROP TABLE <TB_NAME>;
+### **4. READING DATA**
 
-9)Cmd for Table Information:-
+13. **Read All Data**  
+    ```sql
+    SELECT * FROM <TB_NAME>;
+    ```
 
-DESC <TB_NAME>;
+14. **Read Specific Column**  
+    ```sql
+    SELECT <COL_NAME> FROM <TB_NAME>;
+    ```
 
-10)INSERT VALUE INTO TABLE:-
+15. **Read Data Based on Condition**  
+    ```sql
+    SELECT <COL_NAME> FROM <TB_NAME> WHERE <CONDITION>;
+    SELECT * FROM <TB_NAME> WHERE <CONDITION>;
+    ```
 
-INSERT INTO <TB_NAME> (<COL1>,<COL2>,<COL3>) VALUES 
-(<VAL1>,<VAL1>,<VA L1>),(<VAL2>,<VAL2>,<VAL2>);
+---
 
-Note:- If U are insert the value in same collection sequence no need to write collection name while insert the data
+### **5. MODIFYING TABLE STRUCTURE**
 
-INSERT INTO <TB_NAME> VALUES (<VAL1>,<VAL2>,<VAL3>);
+16. **Add a New Column to Table**  
+    ```sql
+    ALTER TABLE <TB_NAME> 
+    ADD COLUMN <COL_NAME> <DATATYPE> AFTER <LOCATION>;
+    ```
 
-11)READING DATA FROM TABLES:-
+17. **Modify Column DataType**  
+    ```sql
+    ALTER TABLE <TB_NAME> 
+    MODIFY COLUMN <COL_NAME> <NEW_DATATYPE>;
+    ```
 
-SELECT * FROM <TB_NAME>;
+18. **Rename Table**  
+    ```sql
+    ALTER TABLE <TB_NAME> RENAME TO <NEW_TABLE_NAME>;
+    ```
 
-All Data are show
+19. **Rename Column**  
+    ```sql
+    ALTER TABLE <TB_NAME> 
+    RENAME COLUMN <OLD_COL_NAME> TO <NEW_COL_NAME>;
+    ```
 
-12)READING DATA BASE ON COLLECTION:-
+20. **Set Default Value for a Column**  
+    ```sql
+    ALTER TABLE <TB_NAME> 
+    MODIFY <COL_NAME> <DATATYPE> DEFAULT '<DEFAULT_VAL>';
+    ```
 
-SELECT <COL_NAME> FROM <TB_NAME>;
+---
 
-Show that specific Collection Value;
+### **6. UPDATING DATA**
 
-13)READING DATA BASE ON CONDITION:-
+21. **Update Specific Column**  
+    ```sql
+    UPDATE <TB_NAME> 
+    SET <COL_NAME> = <VAL> 
+    WHERE <CONDITION>;
+    ```
 
-SELECT <COL_NAME> FROM <TB_NAME> WHERE <CONDITION>;
+22. **Update Multiple Rows with CASE Statement**  
+    ```sql
+    UPDATE <TB_NAME>
+    SET <COL_NAME> = CASE 
+        WHEN ID = 101 THEN 'VAL1'
+        WHEN ID = 102 THEN 'VAL2'
+        ELSE <COL_NAME>
+    END
+    WHERE ID IN (101, 102);
+    ```
 
-SELECT * FROM <TB_NAME> WHERE <CONDITION>;
+---
 
-Base on the Conditions Display Data
+### **7. DELETING DATA**
 
-14)Insert New Collection into Existed Table:-
+23. **Delete Data Based on Condition**  
+    ```sql
+    DELETE FROM <TB_NAME> WHERE <CONDITION>;
+    ```
 
-ALTER TABLE <TB_NAME> ADD COLUMN <COL_NAME>  <DATATYPE> AFTER <LOCATION>;
+24. **Delete Rows with Null Values**  
+    ```sql
+    DELETE FROM <TB_NAME>
+    WHERE <COL1> IS NULL AND <COL2> IS NULL;
+    ```
 
-INSERT INTO <TB_NAME> (<Col>) VALUES (<Val>); 
+---
 
-New Collection insert With Value
+### **8. PRIMARY KEYS**
 
-15) Modify Columns DataType in Existed Table:- 
-            
-ALTER TABLE <TB_NAME> MODIFY COLUMN <COL_NAME>     <COL_NEW_DATATYPE>;
+25. **Check Primary Key in a Table**  
+    ```sql
+    SHOW INDEX FROM <TB_NAME>;
+    ```
 
-16) Modify/Update data from a Table:-
+26. **Drop Primary Key**  
+    ```sql
+    ALTER TABLE <TB_NAME> DROP PRIMARY KEY;
+    ```
 
-UPDATE <TB_NAME> SET <COL_NAME>=<VAL>
-WHERE  <Condition>;
+27. **Add Primary Key with Auto Increment**  
+    ```sql
+    ALTER TABLE <TB_NAME>
+    MODIFY COLUMN <COL_NAME> INT PRIMARY KEY AUTO_INCREMENT;
+    ```
 
-17) Delete Value From Table:-
+---
 
-DELETE FROM SQL_P 
-WHERE ID IS NULL AND NAME IS NULL AND CITY IS NULL;
+### **9. ORDERING DATA**
 
-DELETE FROM <TB_NAME> WHERE <CONDITION>;
-  
-18) Default Value Change in Table:-
+28. **Display Data in Descending Order**  
+    ```sql
+    SELECT * FROM <TB_NAME>
+    ORDER BY <COL_NAME> DESC;
+    ```
 
-ALTER TABLE <TB_NAME> MODIFY <COL> <DATATYPES> DEFAULT ‘<As Acc to u’; 
+---
 
-19) Update Multiple Entity Corresponding to single Attribute:-
+### **10. ALIAS FUNCTION**
 
-UPDATE CUSTOMERS
-SET DIVISION = CASE 
-    WHEN ID = 101 THEN '8A11'
-    WHEN ID = 102 THEN '8B12'
-    WHEN ID = 103 THEN '8C13'
-    WHEN ID = 104 THEN '8A6'
-    ELSE DIVISION -- Keeps the value unchanged for other rows
-END
-WHERE ID IN (101, 102, 103, 104);
+29. **Alias for Columns**  
+    ```sql
+    SELECT <COL_NAME> AS <NEW_NAME> FROM <TB_NAME>;
+    ```
 
-20) Rename Table Name Or Attribute Name:-
+---
 
-ALTER TABLE <TB_NAME> RENAME TO <NEW_TABLE_NAME>
-
-ALTER TABLE <TB_NAME> RENAME COLUMN <OLD_COL_NAME> TO <NEW_COL_NAME>;
-
-21) Check If Any Primary Key Exist:-
-
-             SHOW INDEX FROM <TB_NAME>;
-
-22) DROP PRIMARY KEY FROM TABLE:-
-
-ALTER TABLE CUSTOMERS DROP PRIMARY KEY;
-Modify the Column and Add New Primary Key with auto increment:-
-
-            ALTER TABLE <TB_NAME>  MODIFY COLUMN <COL_NAME> INT PRIMARY KEY     AUTO_INCREMENT;
-
-
-23) Display The Data In decrease order:-
-
-SELECT * FROM <tb_name>
-ORDER BY <COL_PRIMARY_KEY)  DESC;
-   
-24) Alias Function To Change Attribute Name While During Display Data:-
-
-	SELECT <COL> AS <AS_ACC_TO_COL_NAME> FROM <TB_NAME>;
-
+### **11. STRING FUNCTIONS**  
 
 

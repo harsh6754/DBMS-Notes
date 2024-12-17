@@ -109,4 +109,32 @@ SET DIVISION = CASE
 END
 WHERE ID IN (101, 102, 103, 104);
 
+20) Rename Table Name Or Attribute Name:-
+
+ALTER TABLE <TB_NAME> RENAME TO <NEW_TABLE_NAME>
+
+ALTER TABLE <TB_NAME> RENAME COLUMN <OLD_COL_NAME> TO <NEW_COL_NAME>;
+
+21) Check If Any Primary Key Exist:-
+
+             SHOW INDEX FROM <TB_NAME>;
+
+22) DROP PRIMARY KEY FROM TABLE:-
+
+ALTER TABLE CUSTOMERS DROP PRIMARY KEY;
+Modify the Column and Add New Primary Key with auto increment:-
+
+            ALTER TABLE <TB_NAME>  MODIFY COLUMN <COL_NAME> INT PRIMARY KEY     AUTO_INCREMENT;
+
+
+23) Display The Data In decrease order:-
+
+SELECT * FROM <tb_name>
+ORDER BY <COL_PRIMARY_KEY)  DESC;
+   
+24) Alias Function To Change Attribute Name While During Display Data:-
+
+	SELECT <COL> AS <AS_ACC_TO_COL_NAME> FROM <TB_NAME>;
+
+
 

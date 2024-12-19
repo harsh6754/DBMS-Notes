@@ -1,284 +1,319 @@
+# SQL Operations Guide
 
-### **1. DATABASE OPERATIONS**
+## 1. DATABASE OPERATIONS
 
-1. **Listing All Databases**  
-   ```sql
-   SHOW DATABASES;
-   ```
+### Listing All Databases
+```sql
+SHOW DATABASES;
+```
 
-2. **Create Database**  
-   ```sql
-   CREATE DATABASE <DB_NAME>;
-   ```
+### Create Database
+```sql
+CREATE DATABASE <DB_NAME>;
+```
 
-3. **Switch to a Database**  
-   ```sql
-   USE <DB_NAME>;
-   ```
+### Switch to a Database
+```sql
+USE <DB_NAME>;
+```
 
-4. **Check Current Database**  
-   ```sql
-   SELECT DATABASE();
-   ```
+### Check Current Database
+```sql
+SELECT DATABASE();
+```
 
-5. **Clear Terminal Command**  
-   ```sql
-   system cls;
-   ```
+### Clear Terminal Command
+```sql
+system cls;
+```
 
-6. **Delete a Database**  
-   ```sql
-   DROP DATABASE <DB_NAME>;
-   ```
-
----
-
-### **2. TABLE OPERATIONS**
-
-1. **Create Table**  
-   ```sql
-   CREATE TABLE <TB_NAME> (
-       <COL1> <DATATYPE>,
-       <COL2> <DATATYPE>
-   );
-   ```
-
-2. **Check Created Tables**  
-   ```sql
-   SHOW TABLES;
-   ```
-
-3. **Describe Table Structure**  
-   ```sql
-   DESC <TB_NAME>;
-   ```
-
-4. **Delete a Table**  
-   ```sql
-   DROP TABLE <TB_NAME>;
-   ```
+### Delete a Database
+```sql
+DROP DATABASE <DB_NAME>;
+```
 
 ---
 
-### **3. INSERTING DATA**
+## 2. TABLE OPERATIONS
 
-1. **Insert Data into Table (Specific Columns)**  
-   ```sql
-   INSERT INTO <TB_NAME> (<COL1>, <COL2>, <COL3>)
-   VALUES (<VAL1>, <VAL2>, <VAL3>), (<VAL4>, <VAL5>, <VAL6>);
-   ```
+### Create Table
+```sql
+CREATE TABLE <TB_NAME> (
+    <COL1> <DATATYPE>,
+    <COL2> <DATATYPE>
+);
+```
 
-2. **Insert Data (All Columns)**  
-   ```sql
-   INSERT INTO <TB_NAME>
-   VALUES (<VAL1>, <VAL2>, <VAL3>);
-   ```
+### Check Created Tables
+```sql
+SHOW TABLES;
+```
 
----
+### Describe Table Structure
+```sql
+DESC <TB_NAME>;
+```
 
-### **4. READING DATA**
-
-1. **Read All Data**  
-   ```sql
-   SELECT * FROM <TB_NAME>;
-   ```
-
-2. **Read Specific Column**  
-   ```sql
-   SELECT <COL_NAME> FROM <TB_NAME>;
-   ```
-
-3. **Read Data Based on Condition**  
-   ```sql
-   SELECT <COL_NAME> FROM <TB_NAME> WHERE <CONDITION>;
-   SELECT * FROM <TB_NAME> WHERE <CONDITION>;
-   ```
+### Delete a Table
+```sql
+DROP TABLE <TB_NAME>;
+```
 
 ---
 
-### **5. MODIFYING TABLE STRUCTURE**
+## 3. INSERTING DATA
 
-1. **Add a New Column to Table**  
-   ```sql
-   ALTER TABLE <TB_NAME> 
-   ADD COLUMN <COL_NAME> <DATATYPE> AFTER <LOCATION>;
-   ```
+### Insert Data into Table (Specific Columns)
+```sql
+INSERT INTO <TB_NAME> (<COL1>, <COL2>, <COL3>)
+VALUES (<VAL1>, <VAL2>, <VAL3>), (<VAL4>, <VAL5>, <VAL6>);
+```
 
-2. **Modify Column DataType**  
-   ```sql
-   ALTER TABLE <TB_NAME> 
-   MODIFY COLUMN <COL_NAME> <NEW_DATATYPE>;
-   ```
-
-3. **Rename Table**  
-   ```sql
-   ALTER TABLE <TB_NAME> RENAME TO <NEW_TABLE_NAME>;
-   ```
-
-4. **Rename Column**  
-   ```sql
-   ALTER TABLE <TB_NAME> 
-   RENAME COLUMN <OLD_COL_NAME> TO <NEW_COL_NAME>;
-   ```
-
-5. **Set Default Value for a Column**  
-   ```sql
-   ALTER TABLE <TB_NAME> 
-   MODIFY <COL_NAME> <DATATYPE> DEFAULT '<DEFAULT_VAL>';
-   ```
+### Insert Data (All Columns)
+```sql
+INSERT INTO <TB_NAME>
+VALUES (<VAL1>, <VAL2>, <VAL3>);
+```
 
 ---
 
-### **6. UPDATING DATA**
+## 4. READING DATA
 
-1. **Update Specific Column**  
-   ```sql
-   UPDATE <TB_NAME> 
-   SET <COL_NAME> = <VAL> 
-   WHERE <CONDITION>;
-   ```
+### Read All Data
+```sql
+SELECT * FROM <TB_NAME>;
+```
 
-2. **Update Multiple Rows with CASE Statement**  
-   ```sql
-   UPDATE <TB_NAME>
-   SET <COL_NAME> = CASE 
-       WHEN ID = 101 THEN 'VAL1'
-       WHEN ID = 102 THEN 'VAL2'
-       ELSE <COL_NAME>
-   END
-   WHERE ID IN (101, 102);
-   ```
+### Read Specific Column
+```sql
+SELECT <COL_NAME> FROM <TB_NAME>;
+```
+
+### Read Data Based on Condition
+```sql
+SELECT <COL_NAME> FROM <TB_NAME> WHERE <CONDITION>;
+SELECT * FROM <TB_NAME> WHERE <CONDITION>;
+```
 
 ---
 
-### **7. DELETING DATA**
+## 5. MODIFYING TABLE STRUCTURE
 
-1. **Delete Data Based on Condition**  
-   ```sql
-   DELETE FROM <TB_NAME> WHERE <CONDITION>;
-   ```
+### Add a New Column to Table
+```sql
+ALTER TABLE <TB_NAME> 
+ADD COLUMN <COL_NAME> <DATATYPE> AFTER <LOCATION>;
+```
 
-2. **Delete Rows with Null Values**  
-   ```sql
-   DELETE FROM <TB_NAME>
-   WHERE <COL1> IS NULL AND <COL2> IS NULL;
-   ```
+### Modify Column DataType
+```sql
+ALTER TABLE <TB_NAME> 
+MODIFY COLUMN <COL_NAME> <NEW_DATATYPE>;
+```
 
----
+### Rename Table
+```sql
+ALTER TABLE <TB_NAME> RENAME TO <NEW_TABLE_NAME>;
+```
 
-### **8. PRIMARY KEYS**
+### Rename Column
+```sql
+ALTER TABLE <TB_NAME> 
+RENAME COLUMN <OLD_COL_NAME> TO <NEW_COL_NAME>;
+```
 
-1. **Check Primary Key in a Table**  
-   ```sql
-   SHOW INDEX FROM <TB_NAME>;
-   ```
-
-2. **Drop Primary Key**  
-   ```sql
-   ALTER TABLE <TB_NAME> DROP PRIMARY KEY;
-   ```
-
-3. **Add Primary Key with Auto Increment**  
-   ```sql
-   ALTER TABLE <TB_NAME>
-   MODIFY COLUMN <COL_NAME> INT PRIMARY KEY AUTO_INCREMENT;
-   ```
+### Set Default Value for a Column
+```sql
+ALTER TABLE <TB_NAME> 
+MODIFY <COL_NAME> <DATATYPE> DEFAULT '<DEFAULT_VAL>';
+```
 
 ---
 
-### **9. ORDERING DATA**
+## 6. UPDATING DATA
 
-1. **Display Data in Descending Order**  
-   ```sql
-   SELECT * FROM <TB_NAME>
-   ORDER BY <COL_NAME> DESC;
-   ```
+### Update Specific Column
+```sql
+UPDATE <TB_NAME> 
+SET <COL_NAME> = <VAL> 
+WHERE <CONDITION>;
+```
+
+### Update Multiple Rows with CASE Statement
+```sql
+UPDATE <TB_NAME>
+SET <COL_NAME> = CASE 
+    WHEN ID = 101 THEN 'VAL1'
+    WHEN ID = 102 THEN 'VAL2'
+    ELSE <COL_NAME>
+END
+WHERE ID IN (101, 102);
+```
+
+---
+
+## 7. DELETING DATA
+
+### Delete Data Based on Condition
+```sql
+DELETE FROM <TB_NAME> WHERE <CONDITION>;
+```
+
+### Delete Rows with Null Values
+```sql
+DELETE FROM <TB_NAME>
+WHERE <COL1> IS NULL AND <COL2> IS NULL;
+```
 
 ---
 
-### **10. ALIAS FUNCTION**
+## 8. PRIMARY KEYS
 
-1. **Alias for Columns**  
-   ```sql
-   SELECT <COL_NAME> AS <NEW_NAME> FROM <TB_NAME>;
-   ```
+### Check Primary Key in a Table
+```sql
+SHOW INDEX FROM <TB_NAME>;
+```
+
+### Drop Primary Key
+```sql
+ALTER TABLE <TB_NAME> DROP PRIMARY KEY;
+```
+
+### Add Primary Key with Auto Increment
+```sql
+ALTER TABLE <TB_NAME>
+MODIFY COLUMN <COL_NAME> INT PRIMARY KEY AUTO_INCREMENT;
+```
+
+---
+
+## 9. ORDERING DATA
+
+### Display Data in Descending Order
+```sql
+SELECT * FROM <TB_NAME>
+ORDER BY <COL_NAME> DESC;
+```
 
 ---
 
-### **11. STRING FUNCTIONS**
+## 10. ALIAS FUNCTION
 
-1. **Concatenation**  
-   - Merge two string values:  
-     ```sql
-     SELECT CONCAT('<VAL1>', '<VAL2>');
-     ```  
-   - Merge two columns:  
-     ```sql
-     SELECT CONCAT(<COL1>, <COL2>) AS <ALIAS_NAME> FROM <TB_NAME>;
-     ```
-   - Merge columns with all data:  
-     ```sql
-     SELECT *, CONCAT(<COL1>, <COL2>) FROM <TB_NAME>;
-     ```
-
-2. **Concatenation with Separator (`CONCAT_WS`)**  
-   - Merge two values with a separator:  
-     ```sql
-     SELECT CONCAT_WS('-', '<VAL1>', '<VAL2>');
-     ```  
-   - Merge columns with separator:  
-     ```sql
-     SELECT CONCAT_WS('-', <COL1>, <COL2>) FROM <TB_NAME>;
-     ```
-   - Display all data with concatenation:  
-     ```sql
-     SELECT *, CONCAT_WS('-', <COL1>, <COL2>) FROM <TB_NAME>;
-     ```
-
-3. **Substring**  
-   - Extract a portion of a string:  
-     ```sql
-     SELECT SUBSTRING('<VAL>', <START>, <LENGTH>);
-     SELECT SUBSTRING(<COL>, <POSITION>) FROM <TB_NAME>;
-     ```
-
-4. **Replace String Values**  
-   ```sql
-   SELECT REPLACE('<STRING>', '<CURRENT_VALUE>', '<NEW_VALUE>');
-   SELECT REPLACE(<COL>, '<CURRENT_VALUE>', '<NEW_VALUE>') FROM <TB_NAME>;
-   ```
-
-5. **Reverse String**  
-   ```sql
-   SELECT REVERSE('<VAL>');
-   SELECT *, REVERSE(<COL>) FROM <TB_NAME>;
-   ```
-
-6. **Uppercase and Lowercase**  
-   ```sql
-   SELECT *, UPPER(<COL>) FROM <TB_NAME>;
-   SELECT *, LOWER(<COL>) FROM <TB_NAME>;
-   ```
-
-7. **String Length**  
-   ```sql
-   SELECT CHAR_LENGTH('<VAL>');
-   SELECT *, CHAR_LENGTH(<COL>) FROM <TB_NAME>;
-   ```
-
-8. **Other String Functions**  
-   - **Left and Right Substrings**:  
-     ```sql
-     SELECT LEFT('<VAL>', <N>);
-     SELECT RIGHT('<VAL>', <N>);
-     ```  
-   - **Repeat a String**:  
-     ```sql
-     SELECT REPEAT('<VAL>', <TIMES>);
-     ```  
-   - **Trim Whitespace**:  
-     ```sql
-     SELECT TRIM('<VAL>');
-     ```
+### Alias for Columns
+```sql
+SELECT <COL_NAME> AS <NEW_NAME> FROM <TB_NAME>;
+```
 
 ---
+
+## 11. STRING FUNCTIONS
+
+### Concatenation
+#### Merge Two String Values
+```sql
+SELECT CONCAT('<VAL1>', '<VAL2>');
+```
+
+#### Merge Two Columns
+```sql
+SELECT CONCAT(<COL1>, <COL2>) AS <ALIAS_NAME> FROM <TB_NAME>;
+```
+
+#### Merge Columns with All Data
+```sql
+SELECT *, CONCAT(<COL1>, <COL2>) FROM <TB_NAME>;
+```
+
+### Concatenation with Separator (`CONCAT_WS`)
+#### Merge Two Values with a Separator
+```sql
+SELECT CONCAT_WS('-', '<VAL1>', '<VAL2>');
+```
+
+#### Merge Columns with Separator
+```sql
+SELECT CONCAT_WS('-', <COL1>, <COL2>) FROM <TB_NAME>;
+```
+
+#### Display All Data with Concatenation
+```sql
+SELECT *, CONCAT_WS('-', <COL1>, <COL2>) FROM <TB_NAME>;
+```
+
+### Substring
+#### Extract a Portion of a String
+```sql
+SELECT SUBSTRING('<VAL>', <START>, <LENGTH>);
+SELECT SUBSTRING(<COL>, <POSITION>) FROM <TB_NAME>;
+```
+
+### Replace String Values
+```sql
+SELECT REPLACE('<STRING>', '<CURRENT_VALUE>', '<NEW_VALUE>');
+SELECT REPLACE(<COL>, '<CURRENT_VALUE>', '<NEW_VALUE>') FROM <TB_NAME>;
+```
+
+### Reverse String
+```sql
+SELECT REVERSE('<VAL>');
+SELECT *, REVERSE(<COL>) FROM <TB_NAME>;
+```
+
+### Uppercase and Lowercase
+```sql
+SELECT *, UPPER(<COL>) FROM <TB_NAME>;
+SELECT *, LOWER(<COL>) FROM <TB_NAME>;
+```
+
+### String Length
+```sql
+SELECT CHAR_LENGTH('<VAL>');
+SELECT *, CHAR_LENGTH(<COL>) FROM <TB_NAME>;
+```
+
+### Other String Functions
+#### Left and Right Substrings
+```sql
+SELECT LEFT('<VAL>', <N>);
+SELECT RIGHT('<VAL>', <N>);
+```
+
+#### Repeat a String
+```sql
+SELECT REPEAT('<VAL>', <TIMES>);
+```
+
+#### Trim Whitespace
+```sql
+SELECT TRIM('<VAL>');
+```
+
+---
+
+## DISTINCT KEYWORD
+
+### Display Distinct Data
+```sql
+SELECT DISTINCT <COL> FROM <TB_NAME>;
+```
+
+---
+
+## ORDER BY KEYWORD
+
+### Sorting Data
+#### Increasing Order
+```sql
+SELECT * FROM <TB_NAME> ORDER BY <COL>;
+```
+
+#### Decreasing Order
+```sql
+SELECT * FROM <TB_NAME> ORDER BY <COL> DESC;
+```
+
+#### Subsorting
+```sql
+SELECT * FROM <TB_NAME> ORDER BY <COL>, <COL2>;
+```
+
